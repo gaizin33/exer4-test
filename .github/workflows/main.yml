@@ -1,7 +1,7 @@
 name: build
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
         uses: actions/cache@v3.0.8
         with:
           path: ~/.npm
-          key: buildCache
+          key: buildCach
       - run: npm ci
       - run: npm test -- --coverage
         env:
@@ -21,10 +21,11 @@ jobs:
         with:
           name: codecoverage
           path: coverage
-      - name: build
+      - name: buil  d
         run: npm run build
       - name: Upload build files
         uses: actions/upload-artifact@v3.1.0
         with:
           name: build
           path: build
+          
